@@ -1,0 +1,13 @@
+2019-09-24 16:23:37,123 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-09-24 16:23:37,126 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+
+   ______               __
+  / ____/     _________/ /___ _
+ / /     __  / ___/ __  / __ `/         My professor accused me of plagiarism.
+/ /___  /_/ / /  / /_/ / /_/ /          His words, not mine!
+\____/     /_/   \__,_/\__,_/
+
+--- Corda Open Source 4.0 (503a2ff) -------------------------------------------------------------
+
+
+Logs can be found in                    : C:\workspace\corda\samples-release-V4\timesheet-example\workflows-kotlin\build\nodes\MegaCorp 1\logs

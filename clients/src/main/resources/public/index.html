@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <title>Voting App</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+    <link rel="stylesheet"
+          href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/css/bootstrap.min.css">
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
+
+</head>
+<body>
+<div class="container">
+    <div class="container-fluid">
+        <form>
+            <h2>Voting Application</h2>
+            <br />
+            <label for="cName"><b>Candidate Name</b></label>
+            <input type="text" id="cName" name="cName" />
+            <button type="button" id="btnSubmit">Create</button>
+            <br />
+        </form>
+        <br /><br /><br /><br />
+        <div class="table-responsive">
+            <table id="location" class="table" border='0' style="width:60%">
+                <tr>
+                    <th>Candidate</th>
+                    <th>Votes</th>
+                </tr>
+            </table>
+        </div>
+        <div>
+            <select name="CandidateName" id="CandidateName"></select>
+            <input type="button" id="btnVote" value="Vote" />
+        </div>
+    </div>
+</div>
+<script>
+var service = 'http://localhost:50006/votes';
+//Expected Json like this ->
+
+[{"name":"Alpha","count":104},{"name":"Beta","count":140},{"name":"Gamma","count":150}]
+
+//candidate name and count of votes
+$(document).ready(function () {
+jQuery.support.cors = true;
+$.ajax(
+{
+type: "GET",
+url: service + '/values/',
+data: "{}",
+contentType: "application/json; charset=utf-8",
+dataType: "json",
+cache: false,
+success: function (data) {
+var trHTML = '';
+$.each(data, function (i, item) {
+trHTML += '<tr><td>' + data[i].name + '</td><td>' + data[i].count +
+
+'</td></tr>';
+
+});
+$('#location').append(trHTML);
+//to bind candidate data to the dropdown from response Json
+$.each(data, function (i, item) {
+
+$("#CandidateName").append($("<option></option>").val(data[i].name).h
+tml(data[i].name));
+
+});
+},
+error: function (msg) {
+alert(msg.responseText);
+}
+});
+var selectedCandidate = $("#CandidateName option:selected").text();
+var service2 = 'http://localhost:50006/post-vote';
+//To vote to Candidate for this Poll, this below method will post voted candidate
+
+$("#btnVote").click(function () {
+var selectedCandidate = $("#CandidateName
+
+option:selected").text();
+
+$.ajax({
+type: "POST",
+url: service2 + "/values/",
+data: { "votefor": selectedCandidate },
+dataType: "json",
+success:function() {
+alert("Voted for:" + selectedCandidate );
+},
+error: function (msg) {
+alert("Voted for:" + selectedCandidate);
+}
+});
+});
+//To create Candidate for this Poll, this below method will post candidate name as json
+
+$("#btnSubmit").click(function () {
+var CandidateName = $("#cName").val();
+$.ajax({
+type: "POST",
+url: service2 + "/values/",
+data: { "CandidateToCreate": CandidateName },
+dataType: "json",
+success: function () {
+alert(CandidateName + " - Added for this Poll");
+},
+error: function (msg) {
+alert(CandidateName+ " - Added for this Poll");
+}
+});
+});
+})
+</script>
+</body>
+</html>
