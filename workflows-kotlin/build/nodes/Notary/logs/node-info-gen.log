@@ -1,10 +1,10 @@
-2019-09-24 16:23:29,278 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
-2019-09-24 16:23:29,282 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-09-27 14:37:06,089 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
+2019-09-27 14:37:06,093 main WARN Unable to instantiate org.fusesource.jansi.WindowsAnsiOutputStream
 
    ______               __
   / ____/     _________/ /___ _
- / /     __  / ___/ __  / __ `/         You know, I was a banker
-/ /___  /_/ / /  / /_/ / /_/ /          once ... but I lost interest. 
+ / /     __  / ___/ __  / __ `/         A banker left to their own devices may find
+/ /___  /_/ / /  / /_/ / /_/ /          themselves .... a-loan! <applause>
 \____/     /_/   \__,_/\__,_/
 
 --- Corda Open Source 4.0 (503a2ff) -------------------------------------------------------------

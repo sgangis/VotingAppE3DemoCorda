@@ -54,67 +54,7 @@ class MainController(rpc: NodeRPCConnection) {
                 .filter { it.organisation !in (SERVICE_NAMES + myLegalName.organisation) })
     }
 
-    /**
-     * Displays all IOU states that exist in the node's vault.
-     */
-    @GetMapping(value = [ "invoices" ], produces = [ APPLICATION_JSON_VALUE ])
-    fun getInvoices() : ResponseEntity<List<StateAndRef<InvoiceState>>> {
-        return ResponseEntity.ok(proxy.vaultQueryBy<InvoiceState>().states)
-    }
 
-    /**
-     * Initiates a flow to issue an Invoice between two parties.
-     *
-     * Once the flow finishes it will have written the Invoice to ledger. Both the contractor and the company will be able to
-     * see it when calling /spring/api/invoices on their respective nodes.
-     *
-     * This end-point takes a Party name parameter as part of the path. If the serving node can't find the other party
-     * in its network map cache, it will return an HTTP bad request.
-     *
-     * The flow is invoked asynchronously. It returns a future when the flow's call() method returns.
-     */
 
-    @PostMapping(value = [ "create-invoice" ], produces = [ TEXT_PLAIN_VALUE ], headers = [ "Content-Type=application/x-www-form-urlencoded" ])
-    fun createInvoice(request: HttpServletRequest): ResponseEntity<String> {
-        val hoursWorked = request.getParameter("hoursWorked").toInt()
-        val date = LocalDate.parse(request.getParameter("date").substringBefore("00").trim(), DateTimeFormatter.ofPattern("E MMMM d yyyy"))
-        val partyName = request.getParameter("megacorp") ?: return ResponseEntity.badRequest().body("Query parameter 'MegaCorp' must not be null.\n")
-        if (hoursWorked <= 0 ) {
-            return ResponseEntity.badRequest().body("Query parameter 'hoursWorked' must be non-negative.\n")
-        }
-        val partyX500Name = CordaX500Name.parse(partyName)
-        val otherParty = proxy.wellKnownPartyFromX500Name(partyX500Name) ?: return ResponseEntity.badRequest().body("Party named $partyName cannot be found.\n")
-
-        return try {
-            val signedTx = proxy.startTrackedFlow(IssueInvoiceFlow::Initiator, hoursWorked, date, otherParty).returnValue.getOrThrow()
-            ResponseEntity.status(HttpStatus.CREATED).body("Transaction id ${signedTx.id} committed to ledger.\n")
-
-        } catch (ex: Throwable) {
-            logger.error(ex.message, ex)
-            ResponseEntity.badRequest().body(ex.message!!)
-        }
-    }
-
-    @PostMapping(value = [ "pay-invoice" ], produces = [ TEXT_PLAIN_VALUE ], headers = [ "Content-Type=application/x-www-form-urlencoded" ])
-    fun payInvoice(request: HttpServletRequest): ResponseEntity<String> {
-        val invoiceId = UUID.fromString(request.getParameter("invoiceId"))
-
-        return try {
-            val signedTx = proxy.startTrackedFlow(PayInvoiceFlow::Initiator, invoiceId).returnValue.getOrThrow()
-            ResponseEntity.status(HttpStatus.CREATED).body("Transaction id ${signedTx.id} committed to ledger.\n")
-        } catch (ex: Throwable) {
-            logger.error(ex.message, ex)
-            ResponseEntity.badRequest().body(ex.message!!)
-        }
-    }
-
-    /**
-     * Displays all Invoice states that only this node has been involved in.
-     */
-    @GetMapping(value = [ "my-invoices" ], produces = [ APPLICATION_JSON_VALUE ])
-    fun getMyInvoices(): ResponseEntity<List<StateAndRef<InvoiceState>>>  {
-        val myInvoices = proxy.vaultQueryBy<InvoiceState>().states.filter { it.state.data.participants.contains(proxy.nodeInfo().legalIdentities.first()) }
-        return ResponseEntity.ok(myInvoices)
-    }
 
 }

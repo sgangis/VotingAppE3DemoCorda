@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController
 import com.example.state.VotingrState
 import net.corda.core.messaging.startTrackedFlow
 import net.corda.core.utilities.getOrThrow
+import org.apache.logging.log4j.core.jackson.ListOfMapEntryDeserializer
 import org.springframework.http.HttpStatus
 import org.springframework.web.bind.annotation.PostMapping
 import java.time.LocalDate
@@ -64,15 +65,60 @@ class Controller(rpc: NodeRPCConnection) {
     /**
      * Displays all Votes Ihat exist in the node's vault.
      */
+//    @GetMapping(value = [ "votes" ], produces = [MediaType.APPLICATION_JSON_VALUE])
+//    fun getVotes() : ResponseEntity<List<StateAndRef<VotingrState>>> {
+//        //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
+//        val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
+//        //var candidateList = mutableListOf<String>()
+//        var voteList:List<String>?=null
+//
+//        for (item in vault)
+//            println(item.state.data.candidateName)
+//
+//        return ResponseEntity.ok(vault)
+//        //for (vote in vault) {
+//        //    candidateList.add(vote.candidateName)
+//        //}
+//    }
+
+    /**
+     * Displays all Votes Ihat exist in the node's vault.
+     */
+    @GetMapping(value = [ "candidateList" ], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun getCandidateList() : ResponseEntity<Map<String, Int>> {
+        //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
+        val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
+        //var candidateList = mutableListOf<String>()
+        var voteList = mutableListOf<String>()
+
+        for (item in vault)
+            voteList.add(item.state.data.candidateName);
+
+        var voteByCount = voteList.groupingBy{it}.eachCount().filter{it.value > 1}
+        return ResponseEntity.ok(voteByCount)
+    }
+
+    /**
+     * Displays all Votes Ihat exist in the node's vault.
+     */
     @GetMapping(value = [ "votes" ], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getVotes() : ResponseEntity<List<StateAndRef<VotingrState>>> {
-        return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
+    fun getVotes() : ResponseEntity<Map<String, Int>> {
+        //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
+        val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
+        //var candidateList = mutableListOf<String>()
+        var voteList = mutableListOf<String>()
+
+        for (item in vault)
+            voteList.add(item.state.data.candidateName);
+
+        var voteByCount = voteList.groupingBy{it}.eachCount()
+        return ResponseEntity.ok(voteByCount)
     }
 
     @PostMapping(value = [ "post-vote" ])
     fun castVote(request: HttpServletRequest): ResponseEntity<String> {
-        //val candidateName = request.getParameter("candidateName").toInt()
-        val candidateName = "Maddfd"
+        val candidateName = request.getParameter("candidateName").toString()
+
         val partyName = proxy.wellKnownPartyFromX500Name(CordaX500Name.parse("O=MegaCorp 1,L=New York,C=US"))!!
 //        if (candidateName <= 0 ) {
 //            return ResponseEntity.badRequest().body("Query parameter 'candidateName' must be non-negative.\n")
