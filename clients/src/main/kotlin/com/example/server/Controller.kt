@@ -85,7 +85,7 @@ class Controller(rpc: NodeRPCConnection) {
      * Displays all Votes Ihat exist in the node's vault.
      */
     @GetMapping(value = [ "candidateList" ], produces = [MediaType.APPLICATION_JSON_VALUE])
-    fun getCandidateList() : ResponseEntity<Map<String, Int>> {
+    fun getCandidateList() : ResponseEntity<List<String>> {
         //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
         val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
         //var candidateList = mutableListOf<String>()
@@ -94,7 +94,7 @@ class Controller(rpc: NodeRPCConnection) {
         for (item in vault)
             voteList.add(item.state.data.candidateName);
 
-        var voteByCount = voteList.groupingBy{it}.eachCount().filter{it.value > 1}
+        var voteByCount = voteList.distinct()
         return ResponseEntity.ok(voteByCount)
     }
 

@@ -10,52 +10,74 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body >
 <div class="container">
     <div class="container-fluid">
         <h2>Voting Booth</h2>
 
         <form id="frm1" action="http://localhost:50006/post-vote" method="post">
-            Candidate Name : <input type="text" name="candidateName">
-            <input type="button" onclick="myFunction()" value="Submit"></br>
-            <select name="cars">
-                <option value="volvo">Volvo</option>
-                <option value="saab">Saab</option>
-                <option value="fiat">Fiat</option>
-                <option value="audi">Audi</option>
+            Candidate Name :
+            <select name="candidateName" id="candidateList">
+                <option>Mahesh</option>
             </select>
+            <input type="button" onclick="myFunction()" value="Submit"></br>
+
         </form>
         <br /><br /><br />
         <div class="table-responsive" id="demo">
         </div>
     </div>
+    <script>
+
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200)
+          {
+            myObj = JSON.parse(this.responseText);
+            var voteList = document.getElementById("candidateList");
+
+            for (x in myObj) {
+              var option = document.createElement("option");
+              option.text = myObj[x];
+              voteList.add(option);
+            }
+          }
+        };
+        xmlhttp.open("GET", "http://localhost:50006/candidateList", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();
+
+    </script>
 
     <script>
-var obj, dbParam, xmlhttp, myObj, x, txt = "";
-obj = { table: "customers", limit: 20 };
-dbParam = JSON.stringify(obj);
-xmlhttp = new XMLHttpRequest();
-xmlhttp.onreadystatechange = function() {
-  if (this.readyState == 4 && this.status == 200) {
-    myObj = JSON.parse(this.responseText);
-    txt += "<table class='table' border='0' style='width:60%'> <tr><th>Candidate</th><th>Votes</th></tr>"
-    for (x in myObj) {
-      txt += "<tr><td>" + x + "</td><td>" + myObj[x]  + " </td></tr>";
-    }
-    txt += "</table>"
-    document.getElementById("demo").innerHTML = txt;
-  }
-};
-xmlhttp.open("GET", "http://localhost:50006/votes", true);
-xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
-xmlhttp.send();
-</script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            txt += "<table class='table' border='0' style='width:60%'> <tr><th>Candidate</th><th>Votes</th></tr>"
+            for (x in myObj) {
+              txt += "<tr><td>" + x + "</td><td>" + myObj[x]  + " </td></tr>";
+            }
+            txt += "</table>"
+            document.getElementById("demo").innerHTML = txt;
+          }
+        };
+        xmlhttp.open("GET", "http://localhost:50006/votes", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();
+    </script>
 
     <script>
-function myFunction() {
-  document.getElementById("frm1").submit();
-}
-</script>
+        function myFunction() {
+             document.getElementById("frm1").submit();
+        }
+    </script>
 </div>
 </body>
 </html>
