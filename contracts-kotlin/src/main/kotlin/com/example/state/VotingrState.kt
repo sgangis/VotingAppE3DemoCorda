@@ -13,7 +13,7 @@ data class VotingrState(
         val owner: Party,
         val candidateName: String,
         val votes: Int,
-        val linearId: UniqueIdentifier) : ContractState {
+        val linearId: UniqueIdentifier = UniqueIdentifier()) : ContractState {
     // Participants is a list of all the parties who should
     // be notified of the creation or consumption of this state.
 

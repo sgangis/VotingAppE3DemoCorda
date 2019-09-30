@@ -65,25 +65,6 @@ class Controller(rpc: NodeRPCConnection) {
     /**
      * Displays all Votes Ihat exist in the node's vault.
      */
-//    @GetMapping(value = [ "votes" ], produces = [MediaType.APPLICATION_JSON_VALUE])
-//    fun getVotes() : ResponseEntity<List<StateAndRef<VotingrState>>> {
-//        //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
-//        val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
-//        //var candidateList = mutableListOf<String>()
-//        var voteList:List<String>?=null
-//
-//        for (item in vault)
-//            println(item.state.data.candidateName)
-//
-//        return ResponseEntity.ok(vault)
-//        //for (vote in vault) {
-//        //    candidateList.add(vote.candidateName)
-//        //}
-//    }
-
-    /**
-     * Displays all Votes Ihat exist in the node's vault.
-     */
     @GetMapping(value = [ "candidateList" ], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getCandidateList() : ResponseEntity<List<String>> {
         //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
@@ -99,34 +80,71 @@ class Controller(rpc: NodeRPCConnection) {
     }
 
     /**
-     * Displays all Votes Ihat exist in the node's vault.
+     * Get all Votes Ihat exist in the node's vault.
+     */
+    @GetMapping(value = [ "votesDetails" ], produces = [MediaType.APPLICATION_JSON_VALUE])
+    fun getVotesDetails() : ResponseEntity<List<StateAndRef<VotingrState>>> {
+        return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
+    }
+
+    /**
+     * Get all Votes Ihat exist in the node's vault.
      */
     @GetMapping(value = [ "votes" ], produces = [MediaType.APPLICATION_JSON_VALUE])
     fun getVotes() : ResponseEntity<Map<String, Int>> {
-        //return ResponseEntity.ok(proxy.vaultQueryBy<VotingrState>().states)
         val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
         //var candidateList = mutableListOf<String>()
         var voteList = mutableListOf<String>()
 
-        for (item in vault)
-            voteList.add(item.state.data.candidateName);
-
+        for (item in vault) {
+            if ( item.state.data.votes == 1 )
+                voteList.add(item.state.data.candidateName);
+        }
         var voteByCount = voteList.groupingBy{it}.eachCount()
         return ResponseEntity.ok(voteByCount)
     }
 
+    /**
+     * Add Vote to in the node's vault.
+     */
     @PostMapping(value = [ "post-vote" ])
     fun castVote(request: HttpServletRequest): ResponseEntity<String> {
         val candidateName = request.getParameter("candidateName").toString()
 
         val partyName = proxy.wellKnownPartyFromX500Name(CordaX500Name.parse("O=MegaCorp 1,L=New York,C=US"))!!
-//        if (candidateName <= 0 ) {
-//            return ResponseEntity.badRequest().body("Query parameter 'candidateName' must be non-negative.\n")
-//        }
-        //val otherParty = proxy.wellKnownPartyFromX500Name(partyX500Name) ?: return ResponseEntity.badRequest().body("Party named $partyName cannot be found.\n")
-
+        if (candidateName.isNullOrEmpty() ) {
+            return ResponseEntity.badRequest().body("Query parameter 'candidateName' must be non-empty.\n")
+        }
         return try {
             val signedTx = proxy.startTrackedFlow(::CastVoteInitiator, partyName, candidateName, 1).returnValue.getOrThrow()
+            ResponseEntity.status(HttpStatus.CREATED).body("Transaction id ${signedTx.id} committed to ledger.\n")
+
+        } catch (ex: Throwable) {
+            logger.error(ex.message, ex)
+            ResponseEntity.badRequest().body(ex.message!!)
+        }
+    }
+
+    /**
+     * Add Candidatate to in the node's vault.
+     */
+    @PostMapping(value = [ "post-candidate" ])
+    fun createCandidate(request: HttpServletRequest): ResponseEntity<String> {
+        val candidateName = request.getParameter("candidateName").toString()
+
+        val partyName = proxy.wellKnownPartyFromX500Name(CordaX500Name.parse("O=MegaCorp 1,L=New York,C=US"))!!
+        if (candidateName.isNullOrEmpty() ) {
+            return ResponseEntity.badRequest().body("Query parameter 'candidateName' must be non-empty.\n")
+        }
+
+        val vault : List<StateAndRef<VotingrState>> = proxy.vaultQueryBy<VotingrState>().states
+        for (item in vault) {
+            if ( item.state.data.candidateName === candidateName )
+                return ResponseEntity.badRequest().body("Query parameter 'candidateName' is already exist in Vault.\n")
+        }
+
+        return try {
+            val signedTx = proxy.startTrackedFlow(::CastVoteInitiator, partyName, candidateName, 0).returnValue.getOrThrow()
             ResponseEntity.status(HttpStatus.CREATED).body("Transaction id ${signedTx.id} committed to ledger.\n")
 
         } catch (ex: Throwable) {

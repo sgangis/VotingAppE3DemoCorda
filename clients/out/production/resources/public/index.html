@@ -10,110 +10,74 @@
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.0/js/bootstrap.min.js"></script>
 
 </head>
-<body>
+<body >
 <div class="container">
     <div class="container-fluid">
-        <form>
-            <h2>Voting Application</h2>
-            <br />
-            <label for="cName"><b>Candidate Name</b></label>
-            <input type="text" id="candidateName" name="candidateName" />
-            <button type="button" id="btnSubmit">Create</button>
-            <br />
+        <h2>Voting Booth</h2>
+
+        <form id="frm1" action="http://localhost:50006/post-vote" method="post">
+            Candidate Name :
+            <select name="candidateName" id="candidateList">
+                <option>Mahesh</option>
+            </select>
+            <input type="button" onclick="myFunction()" value="Submit"></br>
+
         </form>
-        <br /><br /><br /><br />
-        <div class="table-responsive">
-            <table id="location" class="table" border='0' style="width:60%">
-                <tr>
-                    <th>Candidate</th>
-                    <th>Votes</th>
-                </tr>
-            </table>
-        </div>
-        <div>
-            <select name="candidateName" id="CandidateName"></select>
-            <input type="button" id="btnVote" value="Vote" />
+        <br /><br /><br />
+        <div class="table-responsive" id="demo">
         </div>
     </div>
+    <script>
+
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200)
+          {
+            myObj = JSON.parse(this.responseText);
+            var voteList = document.getElementById("candidateList");
+
+            for (x in myObj) {
+              var option = document.createElement("option");
+              option.text = myObj[x];
+              voteList.add(option);
+            }
+          }
+        };
+        xmlhttp.open("GET", "http://localhost:50006/candidateList", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();
+
+    </script>
+
+    <script>
+        var obj, dbParam, xmlhttp, myObj, x, txt = "";
+        obj = { table: "customers", limit: 20 };
+        dbParam = JSON.stringify(obj);
+        xmlhttp = new XMLHttpRequest();
+        xmlhttp.onreadystatechange = function() {
+          if (this.readyState == 4 && this.status == 200) {
+            myObj = JSON.parse(this.responseText);
+            txt += "<table class='table' border='0' style='width:60%'> <tr><th>Candidate</th><th>Votes</th></tr>"
+            for (x in myObj) {
+              txt += "<tr><td>" + x + "</td><td>" + myObj[x]  + " </td></tr>";
+            }
+            txt += "</table>"
+            document.getElementById("demo").innerHTML = txt;
+          }
+        };
+        xmlhttp.open("GET", "http://localhost:50006/votes", true);
+        xmlhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xmlhttp.send();
+    </script>
+
+    <script>
+        function myFunction() {
+             document.getElementById("frm1").submit();
+        }
+    </script>
 </div>
-<script>
-var service = 'http://localhost:50006/votes';
-//Expected Json like this ->
-
-[{"name":"Alpha","count":104},{"name":"Beta","count":140},{"name":"Gamma","count":150}]
-
-//candidate name and count of votes
-$(document).ready(function () {
-jQuery.support.cors = true;
-$.ajax(
-{
-type: "GET",
-url: service + '/values/',
-data: "{}",
-contentType: "application/json; charset=utf-8",
-dataType: "json",
-cache: false,
-success: function (data) {
-var trHTML = '';
-$.each(data, function (i, item) {
-trHTML += '<tr><td>' + data[i].name + '</td><td>' + data[i].count +
-
-'</td></tr>';
-
-});
-$('#location').append(trHTML);
-//to bind candidate data to the dropdown from response Json
-$.each(data, function (i, item) {
-
-$("#CandidateName").append($("<option></option>").val(data[i].name).h
-tml(data[i].name));
-
-});
-},
-error: function (msg) {
-alert(msg.responseText);
-}
-});
-var selectedCandidate = $("#CandidateName option:selected").text();
-var service2 = 'http://localhost:50006/post-vote';
-//To vote to Candidate for this Poll, this below method will post voted candidate
-
-$("#btnVote").click(function () {
-var selectedCandidate = $("#CandidateName
-
-option:selected").text();
-
-$.ajax({
-type: "POST",
-url: service2 ,
-data: { "votefor": selectedCandidate },
-dataType: "json",
-success:function() {
-alert("Voted for:" + selectedCandidate );
-},
-error: function (msg) {
-alert("Voted for:" + selectedCandidate);
-}
-});
-});
-//To create Candidate for this Poll, this below method will post candidate name as json
-
-$("#btnSubmit").click(function () {
-var CandidateName = $("#cName").val();
-$.ajax({
-type: "POST",
-url: service2 ,
-data: { "CandidateToCreate": CandidateName },
-dataType: "json",
-success: function () {
-alert(CandidateName + " - Added for this Poll");
-},
-error: function (msg) {
-alert(CandidateName+ " - Added for this Poll");
-}
-});
-});
-})
-</script>
 </body>
 </html>
