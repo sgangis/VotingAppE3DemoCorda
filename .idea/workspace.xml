@@ -1,37 +1,28 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="46f54f14-906f-4b87-848c-cc1d75e26900" name="Default Changelist" comment="" />
-    <ignored path="$PROJECT_DIR$/classes/" />
-    <ignored path="$PROJECT_DIR$/.gradle/" />
-    <ignored path="$PROJECT_DIR$/build/" />
-    <ignored path="$PROJECT_DIR$/out/" />
-    <ignored path="$PROJECT_DIR$/clients/.gradle/" />
-    <ignored path="$PROJECT_DIR$/clients/build/" />
-    <ignored path="$PROJECT_DIR$/clients/out/" />
-    <ignored path="$PROJECT_DIR$/contracts-java/.gradle/" />
-    <ignored path="$PROJECT_DIR$/contracts-java/build/" />
-    <ignored path="$PROJECT_DIR$/contracts-java/out/" />
-    <ignored path="$PROJECT_DIR$/contracts-kotlin/.gradle/" />
-    <ignored path="$PROJECT_DIR$/contracts-kotlin/build/" />
-    <ignored path="$PROJECT_DIR$/contracts-kotlin/out/" />
-    <ignored path="$PROJECT_DIR$/service/.gradle/" />
-    <ignored path="$PROJECT_DIR$/service/build/" />
-    <ignored path="$PROJECT_DIR$/service/out/" />
-    <ignored path="$PROJECT_DIR$/workflows-java/.gradle/" />
-    <ignored path="$PROJECT_DIR$/workflows-java/build/" />
-    <ignored path="$PROJECT_DIR$/workflows-java/out/" />
-    <ignored path="$PROJECT_DIR$/workflows-kotlin/.gradle/" />
-    <ignored path="$PROJECT_DIR$/workflows-kotlin/build/" />
-    <ignored path="$PROJECT_DIR$/workflows-kotlin/out/" />
+    <list default="true" id="f20ccffc-6308-4b2f-9473-d7ad5ec692e2" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
-  <component name="DefaultGradleProjectSettings">
-    <option name="isMigrated" value="true" />
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_DATA_SOURCES" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+    <option name="HIDDEN_KINDS">
+      <set />
+    </option>
+    <expand />
+    <select />
   </component>
   <component name="ExternalProjectsData">
     <projectState path="$PROJECT_DIR$">
@@ -44,9 +35,6 @@
         <task path="$PROJECT_DIR$">
           <activation />
         </task>
-        <task path="$PROJECT_DIR$/clients">
-          <activation />
-        </task>
         <projects_view>
           <tree_state>
             <expand />
@@ -57,159 +45,21 @@
     </system>
   </component>
   <component name="FavoritesManager">
-    <favorites_list name="timesheet-example" />
-  </component>
-  <component name="FileEditorManager">
-    <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/clients/src/main/resources/public/index.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clients/src/main/resources/public/admin.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/Controller.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="35" selection-start-line="35" selection-end-line="35" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/contract/VotingContractTests.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="476">
-              <caret line="34" selection-start-line="34" selection-end-line="34" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/CastVote.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1020">
-              <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-              <folding>
-                <element signature="e#26#466#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/contract/VotingContract.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="306">
-              <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-              <folding>
-                <element signature="e#31#303#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/state/VotingrState.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="323">
-              <caret line="22" selection-start-line="22" selection-end-line="22" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/MainController.kt">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="680">
-              <caret line="56" selection-start-line="56" selection-end-line="56" />
-              <folding>
-                <element signature="e#28#829#0" expanded="true" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/build.gradle">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="272">
-              <caret line="16" selection-start-line="16" selection-end-line="16" />
-            </state>
-          </provider>
-        </entry>
-      </file>
-    </leaf>
-  </component>
-  <component name="FindInProjectRecents">
-    <findStrings>
-      <find>InvoiceState</find>
-      <find>vaultQueryBy</find>
-      <find>obj</find>
-      <find>Invalid or unexpected token</find>
-    </findStrings>
+    <favorites_list name="EVotingCorda1.0" />
   </component>
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="IdeDocumentHistory">
-    <option name="CHANGED_PATHS">
-      <list>
-        <option value="$PROJECT_DIR$/workflows-kotlin/build.gradle" />
-        <option value="$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/CastVote.kt" />
-        <option value="$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/contract/InvoiceContractTests.kt" />
-        <option value="$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/MainController.kt" />
-        <option value="$PROJECT_DIR$/clients/src/main/resources/public/admin.html" />
-        <option value="$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/Controller.kt" />
-        <option value="$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/contract/VotingContract.kt" />
-        <option value="$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/state/VotingrState.kt" />
-        <option value="$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/contract/VotingContractTests.kt" />
-        <option value="$PROJECT_DIR$/clients/src/main/resources/public/index.html" />
-      </list>
-    </option>
-  </component>
-  <component name="ProjectFrameBounds" extendedState="6">
-    <option name="x" value="100" />
-    <option name="y" value="40" />
-    <option name="width" value="2800" />
-    <option name="height" value="1840" />
-  </component>
-  <component name="ProjectView">
-    <navigator proportions="" version="1">
-      <foldersAlwaysOnTop value="true" />
-    </navigator>
-    <panes>
-      <pane id="ProjectPane" />
-      <pane id="Scope" />
-      <pane id="PackagesPane" />
-    </panes>
-  </component>
+  <component name="ProjectId" id="1RIi3Y4DYF3NrxPVKoIxCoDYK5f" />
   <component name="PropertiesComponent">
-    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="RecentsManager">
-    <key name="CopyKotlinDeclarationDialog.RECENTS_KEY">
-      <recent name="com.example.test.contract" />
-      <recent name="com.example.state" />
-      <recent name="com.example.contract" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\workspace\corda\samples-release-V4\timesheet-example\clients\src\main\resources\public" />
-      <recent name="C:\workspace\corda\samples-release-V4\timesheet-example\clients\src\main\kotlin\com\example\server" />
-      <recent name="C:\workspace\corda\samples-release-V4\timesheet-example\workflows-kotlin\src\main\kotlin\com\example\flow" />
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Users\sures\samples\EVotingCorda1.0\clients\src\main\resources\public" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -224,8 +74,27 @@
       </list>
     </option>
   </component>
-  <component name="RunManager" selected="Gradle.timesheet-example [runMegaCorp1Server]">
-    <configuration name="timesheet-example [runMegaCorp1Server]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+  <component name="RunManager" selected="Gradle.EVotingCorda1.0 [runMegaCorp1Server]">
+    <configuration name="EVotingCorda1.0 [runContractorServer]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runContractorServer" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="EVotingCorda1.0 [runMegaCorp1Server]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
       <ExternalSystemSettings>
         <option name="executionName" />
         <option name="externalProjectPath" value="$PROJECT_DIR$" />
@@ -244,25 +113,37 @@
       <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
       <method v="2" />
     </configuration>
-    <configuration name="VotingContractTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
-      <module name="timesheet-example.workflows-kotlin.test" />
-      <extension name="coverage">
-        <pattern>
-          <option name="PATTERN" value="com.example.test.contract.*" />
-          <option name="ENABLED" value="true" />
-        </pattern>
-      </extension>
-      <option name="PACKAGE_NAME" value="com.example.test.contract" />
-      <option name="MAIN_CLASS_NAME" value="com.example.test.contract.VotingContractTests" />
-      <option name="TEST_OBJECT" value="class" />
+    <configuration name="EVotingCorda1.0 [runMegaCorp2Server]" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value="runMegaCorp2Server" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <GradleScriptDebugEnabled>true</GradleScriptDebugEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="Server" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="EVotingCorda1.0.clients.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.example.server.Server" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="JUnit.VotingContractTests" />
-        <item itemvalue="Gradle.timesheet-example [runMegaCorp1Server]" />
+        <item itemvalue="Gradle.EVotingCorda1.0 [runMegaCorp2Server]" />
+        <item itemvalue="Gradle.EVotingCorda1.0 [runMegaCorp1Server]" />
+        <item itemvalue="Gradle.EVotingCorda1.0 [runContractorServer]" />
       </list>
     </recent_temporary>
   </component>
@@ -271,274 +152,74 @@
   </component>
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="46f54f14-906f-4b87-848c-cc1d75e26900" name="Default Changelist" comment="" />
-      <created>1569202126603</created>
+      <changelist id="f20ccffc-6308-4b2f-9473-d7ad5ec692e2" name="Default Changelist" comment="" />
+      <created>1569360811354</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1569202126603</updated>
+      <updated>1569360811354</updated>
+      <workItem from="1569360815137" duration="681000" />
+      <workItem from="1569381765879" duration="2599000" />
+      <workItem from="1569385495393" duration="540000" />
+      <workItem from="1569419053921" duration="2047000" />
+      <workItem from="1569424060574" duration="7776000" />
+      <workItem from="1569434919351" duration="1035000" />
+      <workItem from="1569436006202" duration="145000" />
+      <workItem from="1569436260708" duration="12843000" />
+      <workItem from="1569455855973" duration="9529000" />
+      <workItem from="1569469264129" duration="3069000" />
+      <workItem from="1569605597789" duration="2851000" />
+      <workItem from="1569608651999" duration="2360000" />
+      <workItem from="1569611686842" duration="6262000" />
+      <workItem from="1569618007708" duration="14136000" />
+      <workItem from="1569645906560" duration="1968000" />
+      <workItem from="1569685048568" duration="3130000" />
+      <workItem from="1569688240510" duration="220000" />
+      <workItem from="1569688590058" duration="299000" />
+      <workItem from="1569688945845" duration="4681000" />
+      <workItem from="1569693854315" duration="4413000" />
+      <workItem from="1569701157991" duration="294000" />
+      <workItem from="1569701473859" duration="581000" />
+      <workItem from="1569702245440" duration="2054000" />
+      <workItem from="1569705411689" duration="2928000" />
+      <workItem from="1569724914303" duration="915000" />
+      <workItem from="1569789037937" duration="859000" />
+      <workItem from="1569790093260" duration="232000" />
+      <workItem from="1569790645871" duration="533000" />
+      <workItem from="1569791204179" duration="698000" />
+      <workItem from="1569791940766" duration="1055000" />
+      <workItem from="1569793128045" duration="985000" />
+      <workItem from="1569794605807" duration="360000" />
+      <workItem from="1569795021386" duration="895000" />
+      <workItem from="1569797766360" duration="134000" />
+      <workItem from="1569798540304" duration="111000" />
+      <workItem from="1569798687086" duration="231000" />
+      <workItem from="1569798962199" duration="188000" />
+      <workItem from="1569799176099" duration="648000" />
+      <workItem from="1569799867622" duration="352000" />
+      <workItem from="1569800288979" duration="1243000" />
+      <workItem from="1569801584851" duration="584000" />
+      <workItem from="1569863500001" duration="97000" />
+      <workItem from="1569863695014" duration="452000" />
+      <workItem from="1569864171557" duration="3000" />
+      <workItem from="1569864211521" duration="1834000" />
+      <workItem from="1569883233188" duration="545000" />
     </task>
     <servers />
   </component>
-  <component name="TestHistory">
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 43m 51s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 45m 30s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 46m 08s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 53m 51s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 58m 36s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
-    <history-entry file="VotingContractTests - 2019.09.29 at 20h 59m 15s.xml">
-      <configuration name="VotingContractTests" configurationId="JUnit" />
-    </history-entry>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
   </component>
-  <component name="TodoView">
-    <todo-panel id="selected-file">
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-    <todo-panel id="all">
-      <are-packages-shown value="true" />
-      <is-autoscroll-to-source value="true" />
-    </todo-panel>
-  </component>
-  <component name="ToolWindowManager">
-    <frame x="-6" y="-6" width="1513" height="973" extended-state="6" />
-    <editor active="true" />
-    <layout>
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.8505338" visible="true" weight="0.2" />
-      <window_info id="Structure" order="1" sideWeight="0.14946619" side_tool="true" visible="true" weight="0.2" />
-      <window_info id="Image Layers" order="2" />
-      <window_info id="Designer" order="3" />
-      <window_info id="Capture Tool" order="4" />
-      <window_info id="UI Designer" order="5" />
-      <window_info id="Favorites" order="6" sideWeight="0.50088495" side_tool="true" weight="0.185567" />
-      <window_info anchor="bottom" id="Message" order="0" />
-      <window_info anchor="bottom" id="Find" order="1" />
-      <window_info active="true" anchor="bottom" id="Run" order="2" visible="true" weight="0.39739028" />
-      <window_info anchor="bottom" id="Debug" order="3" weight="0.4" />
-      <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
-      <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
-      <window_info anchor="bottom" id="TODO" order="6" weight="0.32977462" />
-      <window_info anchor="bottom" id="Terminal" order="7" weight="0.23487544" />
-      <window_info anchor="bottom" id="Event Log" order="8" side_tool="true" />
-      <window_info anchor="bottom" id="Version Control" order="9" />
-      <window_info anchor="bottom" id="Build" order="10" weight="0.32977462" />
-      <window_info anchor="bottom" id="Messages" order="11" weight="0.3024911" />
-      <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
-      <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
-      <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info anchor="right" id="Palette" order="3" />
-      <window_info anchor="right" id="Maven" order="4" />
-      <window_info anchor="right" id="Gradle" order="5" visible="true" weight="0.22955327" />
-      <window_info anchor="right" id="Theme Preview" order="6" />
-      <window_info anchor="right" id="Capture Analysis" order="7" />
-      <window_info anchor="right" id="Palette&#9;" order="8" />
-    </layout>
-  </component>
-  <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/contract/InvoiceContract.kt" />
-    <entry file="file://$PROJECT_DIR$/settings.gradle">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/TRADEMARK">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/NodeRPCConnection.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="136">
-          <caret line="15" selection-start-line="15" selection-end-line="15" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/PayInvoiceFlow.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/QueryRateHandler.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/service/SalaryRateOracle.kt" />
-    <entry file="file://$PROJECT_DIR$/gradlew">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/gradlew.bat">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/service/RateOf.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/service/Rate.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/SignHandler.kt" />
-    <entry file="file://$PROJECT_DIR$/gradle.properties">
-      <provider selected="true" editor-type-id="text-editor" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/state/InvoiceState.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/IssueInvoiceFlow.kt" />
-    <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/schema/InvoiceSchema.kt" />
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1751">
-          <caret line="104" column="22" selection-start-line="104" selection-start-column="14" selection-end-line="104" selection-end-column="42" />
-          <folding>
-            <element signature="e#0#54#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/flow/IssueInvoiceFlowTests.kt" />
-    <entry file="file://$PROJECT_DIR$/clients/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="60" column="31" selection-start-line="60" selection-start-column="31" selection-end-line="60" selection-end-column="31" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/Server.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="25" column="5" selection-start-line="25" selection-start-column="5" selection-end-line="25" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/4.0/f157f0cd83cd4a5f0a99ed59e718ac62443b52fc/corda-core-4.0-sources.jar!/net/corda/core/contracts/Structures.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3723">
-          <caret line="233" column="67" selection-start-line="233" selection-start-column="67" selection-end-line="233" selection-end-column="67" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/4.0/f157f0cd83cd4a5f0a99ed59e718ac62443b52fc/corda-core-4.0-sources.jar!/net/corda/core/node/NodeInfo.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="748">
-          <caret line="48" selection-start-line="48" selection-end-line="48" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/4.0/f157f0cd83cd4a5f0a99ed59e718ac62443b52fc/corda-core-4.0-sources.jar!/net/corda/core/messaging/CordaRPCOps.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="6783">
-          <caret line="424" column="107" selection-start-line="424" selection-start-column="107" selection-end-line="424" selection-end-column="107" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/4.0/f157f0cd83cd4a5f0a99ed59e718ac62443b52fc/corda-core-4.0-sources.jar!/net/corda/core/node/services/VaultService.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3128">
-          <caret line="206" column="62" selection-start-line="206" selection-start-column="62" selection-end-line="206" selection-end-column="62" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/org.jetbrains.kotlin/kotlin-stdlib/1.2.71/2e8041d08283cbbb58ad131617486fc6449f6c85/kotlin-stdlib-1.2.71-sources.jar!/kotlin/Collections.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2040">
-          <caret line="134" column="17" selection-start-line="134" selection-start-column="17" selection-end-line="134" selection-end-column="17" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/contract/InvoiceContractTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="357">
-          <caret line="21" column="1" lean-forward="true" selection-start-line="21" selection-start-column="1" selection-end-line="21" selection-end-column="1" />
-          <folding>
-            <element signature="e#35#251#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="jar://$USER_HOME$/.gradle/caches/modules-2/files-2.1/net.corda/corda-core/4.0/f157f0cd83cd4a5f0a99ed59e718ac62443b52fc/corda-core-4.0-sources.jar!/net/corda/core/contracts/UniqueIdentifier.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="22" column="57" selection-start-line="22" selection-start-column="57" selection-end-line="22" selection-end-column="57" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/resources/public/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="18" column="28" selection-start-line="18" selection-start-column="28" selection-end-line="18" selection-end-column="28" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/resources/public/admin.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="69" selection-start-line="17" selection-start-column="69" selection-end-line="17" selection-end-column="69" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/Controller.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="35" selection-start-line="35" selection-end-line="35" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/test/kotlin/com/example/test/contract/VotingContractTests.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="476">
-          <caret line="34" selection-start-line="34" selection-end-line="34" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/workflows-kotlin/src/main/kotlin/com/example/flow/CastVote.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1020">
-          <caret line="69" column="24" selection-start-line="69" selection-start-column="24" selection-end-line="69" selection-end-column="24" />
-          <folding>
-            <element signature="e#26#466#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/contract/VotingContract.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="306">
-          <caret line="23" column="33" selection-start-line="23" selection-start-column="33" selection-end-line="23" selection-end-column="33" />
-          <folding>
-            <element signature="e#31#303#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/contracts-kotlin/src/main/kotlin/com/example/state/VotingrState.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="323">
-          <caret line="22" selection-start-line="22" selection-end-line="22" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/clients/src/main/kotlin/com/example/server/MainController.kt">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="680">
-          <caret line="56" selection-start-line="56" selection-end-line="56" />
-          <folding>
-            <element signature="e#28#829#0" expanded="true" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/build.gradle">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="272">
-          <caret line="16" selection-start-line="16" selection-end-line="16" />
-        </state>
-      </provider>
-    </entry>
-  </component>
-  <component name="masterDetails">
-    <states>
-      <state key="ProjectJDKs.UI">
-        <settings>
-          <last-edited>1.8</last-edited>
-          <splitter-proportions>
-            <option name="proportions">
-              <list>
-                <option value="0.2" />
-              </list>
-            </option>
-          </splitter-proportions>
-        </settings>
-      </state>
-    </states>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State>
+              <option name="COLUMN_ORDER" />
+            </State>
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
 </project>
